@@ -18,7 +18,7 @@ Those packages are for provisioning tomcat binaries and service instances.
 
 ### Linux
 
-Following packages has been tested on RedHat but may work on other unix flavor with fiew modifications.
+Following packages has been tested on RedHat but may work on other unix flavor with few modifications.
 
 #### DeployBinaries-Linux
 
