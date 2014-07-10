@@ -66,5 +66,27 @@ Those packages are to manage tomcat instances as application deployment, undeplo
 
 Following packages has been tested on RedHat but may work on other unix flavor with fiew or even no modifications.
 
+#### DeployApplication-Unix
+
+This package is for deploying application from an archive file to a tomcat instance. Target has to be the server where the instance is running or a component associated to this server.
+
+The package can be parameterized with the following properties:
+- TOMCAT_USER: Tomcat user with management right and deployment right (default value: tomcat)
+- TOMCAT_PASSWORD: Password of the tomcat user defined in TOMCAT_USER property (default value: password)
+- TOMCAT_PORT: This is the port where Apache Tomcat listen for the HTTP requests (default value: 8080)
+- DEPLOY_DIR: Staging directory where archive file may be deployed, can be useless, depend of target and automation cycle.
+- ARCHIVE_FILE: Archive file full path file name. If it starts by . , then path is relative to DEPLOY_DIR
+- application: Name to give to the application and define root url for application: ip:port/application
+
+#### UndeployApplication-Unix
+
+This package is for undeploying an application from a tomcat instance. Target has to be the server where the instance is running or a component associated to this server.
+
+- TOMCAT_USER: Tomcat user with management right and deployment right (default value: tomcat)
+- TOMCAT_PASSWORD: Password of the tomcat user defined in TOMCAT_USER property (default value: password)
+- TOMCAT_PORT: This is the port where Apache Tomcat listen for the HTTP requests (default value: 8080)
+- application: Name of the application.
+
+
 ### Windows
 
