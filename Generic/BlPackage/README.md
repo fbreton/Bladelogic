@@ -32,5 +32,14 @@ The package can be parameterized with the following properties:
 - FILES: List of files, directories to remove (separated by space). If path start by . , then path is considered to be relative from DEPLOY_DIR
 - DEPLOY_DIR: Staging directory where content may have been deployed in previous stage, can be useless, depend of target and automation cycle.
 
+### ExtractZip-Unix
+
+This package is for unziping a zip archive.
+
+The package can be parameterized with the following properties:
+- ARCHIVE_FILE: Path of the zip file. If path start by . , then path is considered to be relative from DEPLOY_DIR
+- POST_PATH: Destination path where to unzip the file. If path start by . , then path is considered to be relative from DEPLOY_DIR
+- DEPLOY_DIR: Staging directory where content may have been deployed in previous stage, can be useless, depend of target and automation cycle.
+
 ## Windows
 
