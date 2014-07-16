@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE command_inventory SYSTEM "file://bladelogic.com/dtds/Command-Inventory.dtd">
+<command_inventory>
+    <name_space name="BlPackage">
+      <complex_command published="yes" release="yes">
+        <name>listLocalParametersByGroupAndName</name>
+		<description>
+          <author>Fred Breton</author>
+          <paragraph>
+            <string_literal>This command list all local parameters of a BlPackage referenced by its group and name.</string_literal>
+		  </paragraph>
+		</description>
+		<argument_list>
+			<argument name="groupName" desc="Name of the group that contains the BlPackage.">java.lang.String</argument>
+			<argument name="blPackageName" desc="Name of the BLPackage.">java.lang.String</argument>
+		</argument_list>
+		<commands_to_execute>
+			<command_invocation>
+				<namespace_ref>BlPackage</namespace_ref>
+				<name>getDBKeyByGroupAndName</name>
+				<input>$groupName$ $blPackageName$</input>
+			</command_invocation>
+			<command_invocation>
+				<namespace_ref>BlPackage</namespace_ref>
+				<name>getLocalParametersClass</name>
+				<input></input>
+			</command_invocation>
+			<command_invocation>
+				<namespace_ref>Utility</namespace_ref>
+				<name>setTargetObject</name>
+				<input></input>
+			</command_invocation>
+			<command_invocation>
+				<namespace_ref>PropertySetClass</namespace_ref>
+				<name>getLocalPropertyNames</name>
+				<input></input>
+			</command_invocation>
+		</commands_to_execute>
+	  </complex_command>
+
+      <complex_command published="yes" release="yes">
+        <name>listLocalParametersByDBKey</name>
+		<description>
+          <author>Fred Breton</author>
+          <paragraph>
+            <string_literal>This command list all local parameters of a BlPackage referenced by its dbKey.</string_literal>
+		  </paragraph>
+		</description>
+		<argument_list>
+			<argument name="dbKey" desc="DBKey of the BLPackage.">com.bladelogic.om.infra.model.base.keys.DBKey</argument>
+		</argument_list>
+		<commands_to_execute>
+          		<command_invocation>
+            		<namespace_ref>DepotObject</namespace_ref>
+            		<name>findByDBKey</name>
+            		<input>$dbKey$</input>
+          		</command_invocation>
+			<command_invocation>
+				<namespace_ref>BlPackage</namespace_ref>
+				<name>getLocalParametersClass</name>
+				<input></input>
+			</command_invocation>
+			<command_invocation>
+				<namespace_ref>Utility</namespace_ref>
+				<name>setTargetObject</name>
+				<input></input>
+			</command_invocation>
+			<command_invocation>
+				<namespace_ref>PropertySetClass</namespace_ref>
+				<name>getLocalPropertyNames</name>
+				<input></input>
+			</command_invocation>
+		</commands_to_execute>
+	  </complex_command>
+	</name_space>
+</command_inventory>
